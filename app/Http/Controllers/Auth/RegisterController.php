@@ -49,9 +49,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => 'required|string|max:255',
-            'mail' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:4|confirmed',
+            'username' => 'required|max:12|min:2',
+            'mail' => 'required|email|max:40|min:5|unique:users',
+            'password' => 'required|alpha_num|min:8|max:20|confirmed',
+            'password_confirmation' => 'required',
         ]);
     }
 
@@ -76,22 +77,25 @@ class RegisterController extends Controller
     // }
 
     public function register(Request $request){
+
         // バリデーションに引っかかった場合の処理
         if($request->isMethod('post')){
             $data = $request->input();
 
              $validator = $this->validator($data);
-
         if($validator->fails()){
- return redirect('/register')
+        return redirect('/register')
     ->withErrors($validator)
     ->withInput();
+
+
   }
+
             $this->create($data);
+            $request->session()->put('name',$data['username']);
             return redirect('added');
 
         }
-
         return view('auth.register');
     }
 
