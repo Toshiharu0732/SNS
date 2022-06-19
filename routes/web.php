@@ -45,3 +45,10 @@ Route::get('/follower-list','PostsController@index');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 });
+
+// 投稿画面の表示
+Route::get('/top', 'PostsController@index');
+// 投稿処理
+Route::post('posts', 'PostsController@store');
+
+Route::get('edit', 'PostsController@edit');
