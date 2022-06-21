@@ -20,23 +20,18 @@
       </div>
     </form>
   @endif
-</div>
   <!-- 全ての投稿リスト -->
   @if (count($posts) > 0)
     <div class="card-body">
       <div class="card-body">
-        <table class="table table-striped task-table">
-        <!-- テーブルヘッダ -->
-        <thead>
-          <th>投稿一覧</th>
-          <th> </th>
-        </thead>
+        <table class="table post">
+
         <!-- テーブル本体 -->
         <tbody>
           @foreach ($posts as $post)
             <tr>
               <!-- 投稿詳細 -->
-              <td class="table-text">
+              <td class="post-text">
                 <div>{{ $post->post}}</div>
 
     <!-- 編集（モーダル） -->
@@ -64,5 +59,19 @@
     </table>
   </div>
 </div>
+</div>
 @endif
+<!-- 検索 -->
+<form>
+ <div>
+        <button type="submit">ユーザー検索</button>
+    </div>
+    <input type="search" placeholder="ユーザー名" name="search" value="@if (isset($search)) {{ $search }} @endif">
+    <div>
+        <button type="submit">検索マーク</button>
+    </div>
+</form>
+
+
+
 @endsection

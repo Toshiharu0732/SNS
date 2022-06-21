@@ -52,3 +52,6 @@ Route::get('/top', 'PostsController@index');
 Route::post('posts', 'PostsController@store');
 // 投稿削除処理
 Route::get('/top/{id}/delete', 'PostsController@delete');
+
+
+//   Route::get('/users.search', 'UsersController@search');
