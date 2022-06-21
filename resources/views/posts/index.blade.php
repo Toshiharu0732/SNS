@@ -38,28 +38,27 @@
               <!-- 投稿詳細 -->
               <td class="table-text">
                 <div>{{ $post->post}}</div>
-                 <div class="card-body">
-                   <form action="{{ url('edit') }}" method="POST" class="form-horizontal">
-                        @csrf
-                        @method('POST')
-                                @error('text')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-primary">
-                                  編集
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+    <!-- 編集（モーダル） -->
+ <div class="edit-modal editModal-{{ $post->id }}">
+        <div class="modal-content">
+            <h2>投稿編集</h2>
+            <form method="POST" enctype="multipart/form-data" action="{{ url('/top') }}/{{$post->id}}">
+                @csrf
+                <textarea name="text" cols="30" rows="2"></textarea>
+                {{ $post->id }}
+                <div class="line-right">
+                    <!-- モーダルを閉じるボタン(関数名と一致させないとモーダルが閉じません) -->
+                    <button type="button" class="left-button" onclick="editModal({{ $post->id }})">キャンセル</button>
+                     <!-- 送信ボタン -->
+                    <button type="submit" class="right-button" onclick="editModal({{ $post->id }})">保存</button>
                 </div>
-              </td>
+            </form>
+        </div>
+    </div>
+
+<!-- 削除 -->
+              <td><a class="btn btn-danger" href="/top/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
         @endforeach
      </tbody>
     </table>

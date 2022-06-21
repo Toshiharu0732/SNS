@@ -54,19 +54,14 @@ public function create()
         ]);
     }
 
-public function edit(posts $posts)
-{
-$user = auth()->user();
-$posts = $posts->getEditTweet($user->id, $posts->id);
 
-if (!isset($posts)) {
-return redirect('posts.edit');
-}
+  public function delete($id)
+    {
+        \DB::table('posts')
+            ->where('id', $id)
+            ->delete();
+        return redirect('/top');
+    }
 
-return view('posts.edit', [
-'user'   => $user,
-'posts' => $posts
-]);
-}
 
 }

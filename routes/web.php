@@ -50,5 +50,5 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/top', 'PostsController@index');
 // 投稿処理
 Route::post('posts', 'PostsController@store');
-
-Route::get('edit', 'PostsController@edit');
+// 投稿削除処理
+Route::get('/top/{id}/delete', 'PostsController@delete');
