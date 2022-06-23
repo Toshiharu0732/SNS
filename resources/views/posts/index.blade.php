@@ -63,9 +63,8 @@
 @endif
 <!-- 検索 -->
 <form method="GET" action="/search">
-    <input type="search" placeholder="ユーザー名" name="search" value="@if (isset($search)) {{ $search }} @endif">
     <div>
-        <button type="submit">検索</button>
+        <button type="submit">ユーザー検索</button>
     </div>
 </form>
 
