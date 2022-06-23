@@ -35,9 +35,9 @@ Route::post('/added', 'Auth\RegisterController@added');
 
 Route::group(['middleware' => 'auth'], function() {
 Route::get('/top','PostsController@index');
-
+//プロフィールのページ
 Route::get('/profile','UsersController@profile');
-
+//検索のページ
 Route::get('/search','UsersController@search');
 
 Route::get('/follow-list','PostsController@index');
