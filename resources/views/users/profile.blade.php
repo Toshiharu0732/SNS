@@ -10,13 +10,13 @@
                 <div class="form-group pt-1">
                      <p>user name</p>
                       <input type="text" name="post" class="form-control"
-          placeholder="{{ session('flash_message') }}">
+          placeholder="{{$user->username}}">
                     <span class="text-danger"></span>
                 </div>
                 <div class="form-group pt-2">
                   <p>mail adress</p>
                    <input type="text" name="post" class="form-control"
-          placeholder="データベースにある既存データ">
+          placeholder="{{$user->mail}}">
                     <span class="text-danger"></span>
                 </div>
                 <div class="form-group pt-2">
@@ -24,20 +24,20 @@
                     <div class="row g-3">
                         <div class="col-md-2">
                            <input type="text" name="post" class="form-control"
-          placeholder="データベースにある既存データ">
+          placeholder="{{$user->password}}">
                         </div>
                         <p>password comfirm</p>
                     <div class="row g-3">
                         <div class="col-md-2">
                            <input type="text" name="post" class="form-control"
-          placeholder="データベースにある既存データ">
+          placeholder="{{$user->password}}">
                         </div>
                     </div>
                      <p>bio</p>
                     <div class="row g-3">
                         <div class="col-md-2">
                            <input type="text" name="post" class="form-control"
-          placeholder="データベースにある既存データ">
+          placeholder="{{$user->bio}}">
                         </div>
                     </div>
                      <p>icon image</p>

@@ -34,4 +34,7 @@ return $this->hasMany('App\Post');
 }
 
 
+
+
+
 }

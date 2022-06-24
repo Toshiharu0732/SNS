@@ -10,12 +10,19 @@ use Validator;
 
 class PostsController extends Controller
 {
+
     //
 public function index(){
 
 // 全ての投稿を取得
 $posts= Post::get();
-return view('posts.index',['posts'=>$posts]);
+// ユーザー情報を取得
+  $user = Auth::user();
+      $id = Auth::id();
+
+return view('posts.index',['posts'=>$posts],['user'=>$user]);
+
+
 
 }
 

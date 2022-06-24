@@ -25,7 +25,7 @@
         <h1><a href="{{ url('top')  }}"><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>〇〇さん<img src="images/icon1.png"></p>
+                    <p>{{$user->username}}さん<img src="images/icon1.png"></p>
                 <div>
                 <ul>
                     <li><a href="/top">ホーム</a></li>
