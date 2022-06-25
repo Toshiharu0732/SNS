@@ -19,6 +19,7 @@
 //Auth::routes();
 
 
+
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
@@ -34,9 +35,13 @@ Route::post('/added', 'Auth\RegisterController@added');
 //ログイン中のページ
 
 Route::group(['middleware' => 'auth'], function() {
+
 Route::get('/top','PostsController@index');
+
 //プロフィールのページ
 Route::get('/profile','UsersController@profile');
+Route::post('/profile','UsersController@update');
+
 //検索のページ
 Route::get('/search','UsersController@search');
 
@@ -44,7 +49,10 @@ Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
 Route::get('/logout', 'Auth\LoginController@logout');
+
 });
+
+
 
 // 投稿画面の表示
 Route::get('/top', 'PostsController@index');

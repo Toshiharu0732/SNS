@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Request;
+use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+
 
 class UsersController extends Controller
 {
@@ -16,6 +17,18 @@ class UsersController extends Controller
       $id = Auth::id();
 
         return view('users.profile',['user'=>$user]);
+    }
+
+      //テスト中
+      public function update(Request $request)
+    {
+        $user = Auth::user();
+        $user->username = $request->username;
+        $user->mail = $request->mail;
+        $user->password = $request->password;
+        $user->bio = $request->bio;
+        $user->update();
+        return redirect('/top');//保存後はリダイレクトさせたいページを指定したりする
     }
 
 
