@@ -78,23 +78,20 @@ class RegisterController extends Controller
 
     public function register(Request $request){
 
-        // バリデーションに引っかかった場合の処理
+
         if($request->isMethod('post')){
             $data = $request->input();
+            $validator = $this->validator($data);
 
-             $validator = $this->validator($data);
-        if($validator->fails()){
-        return redirect('/register')
-    ->withErrors($validator)
-    ->withInput();
-
-
-  }
-
+            // バリデーションに引っかかった場合の処理
+            if($validator->fails()){
+                return redirect('/register')
+                ->withErrors($validator)
+                ->withInput();
+            }
             $this->create($data);
             $request->session()->put('name',$data['username']);
             return redirect('added');
-
         }
         return view('auth.register');
     }

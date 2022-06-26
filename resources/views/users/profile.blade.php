@@ -2,6 +2,10 @@
 
 @section('content')
 
+@foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+@endforeach
+
   <!--テスト-->
 <form method="post" action="/profile">
   @csrf
@@ -11,15 +15,17 @@
    <p>mail adress</p>
     <input name="mail" value="{{$user->mail}}" />
    <p>password</p>
-   <input name="password" value="{{$user->password}}" />
+   <input type="password" name="password"  />
   <p>password comfirm</p>
-   <input name="password" value="{{$user->password}}" />
+   <input  type="password" name="password"/>
    <p>bio</p>
   <input name="bio" value="{{$user->bio}}" />
 
    <p>icon image</p>
-
+   <img src="{{ asset('images/icon1.png'.auth()->user()->images) }}" >
+<p>
   <button>更新</button>
+</p>
 </form>
 
  <!--テスト-->

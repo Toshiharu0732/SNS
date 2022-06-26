@@ -11,7 +11,7 @@
  </form>
  <div style="margin-top:50px;">
 
-<table class="table">
+  <table class="table">
   @foreach($users as $user)
   <tr>
     <td>{{$user->username}}</td>
