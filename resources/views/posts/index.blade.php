@@ -62,7 +62,7 @@
 </div>
 @endif
 <!-- 検索 -->
-<form method="GET" action="/search">
+<form method="get" action="/search">
     <div>
         <button type="submit">ユーザー検索</button>
     </div>

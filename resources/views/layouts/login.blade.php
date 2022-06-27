@@ -25,7 +25,7 @@
         <h1><a href="{{ url('top')  }}"><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>{{$user->username}}さん<img src="images/icon1.png"></p>
+                    <p>{{ Auth::user()->username }}さん<img src="images/icon1.png"></p>
                 <div>
                 <ul>
                     <li><a href="/top">ホーム</a></li>
@@ -41,7 +41,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>{{$user->username}}さんの</p>
+                <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>

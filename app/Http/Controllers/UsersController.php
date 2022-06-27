@@ -46,6 +46,7 @@ class UsersController extends Controller
         $user->mail = $request->mail;
         $user->password = bcrypt($request->password);
         $user->bio = $request->bio;
+        $user->images = $request->images;
 
 
 
@@ -53,7 +54,20 @@ class UsersController extends Controller
         return redirect('/top');//保存後はリダイレクトさせたいページを指定したりする
     }
 
-
+    private function saveProfileImage($images, $id) {
+        // get instance
+        $img = \Image::make($images);
+        // resize
+        $img->fit(100, 100, function($constraint){
+            $constraint->upsize();
+        });
+        // save
+        $file_name = 'profile_'.$id.'.'.$images->getClientOriginalExtension();
+        $save_path = 'storage/app/public/images/'.$file_name;
+        Storage::put($save_path, (string) $img->encode());
+        // return file name
+        return $file_name;
+    }
 
  public function search(Request $request) {
       //ユーザー検索
