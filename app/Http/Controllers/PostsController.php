@@ -52,13 +52,16 @@ return back();
 
 }
 
-public function create()
-    {
-        $user = auth()->user();
 
-        return view('posts.index', [
-            'user' => $user
-        ]);
+     public function postsUpdate(Request $request)
+    {
+       $posts = new Post;
+       $posts->post = $request->post;
+       $posts->user_id = Auth::id();
+
+        $posts->update();
+dd($posts);
+        return redirect('/top');//保存後はリダイレクトさせたいページを指定したりする
     }
 
 

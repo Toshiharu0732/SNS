@@ -40,6 +40,7 @@ Route::get('/top','PostsController@index');
 
 //プロフィールのページ
 Route::get('/profile','UsersController@profile');
+//プロフィール更新
 Route::post('/profile','UsersController@update');
 
 //検索のページ
@@ -56,6 +57,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 // 投稿画面の表示
 Route::get('/top', 'PostsController@index');
+Route::post('/top/{id}','PostsController@postsUpdate');
 // 投稿処理
 Route::post('posts', 'PostsController@store');
 // 投稿削除処理

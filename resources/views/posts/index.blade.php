@@ -38,15 +38,15 @@
  <div class="edit-modal editModal-{{ $post->id }}">
         <div class="modal-content">
             <h2>投稿編集</h2>
-            <form method="POST" enctype="multipart/form-data" action="{{ url('/top') }}/{{$post->id}}">
+            <form method="POST" action="{{ url('/top') }}/{{ $post->post}}">
                 @csrf
-                <textarea name="text" cols="30" rows="2"></textarea>
-                {{ $post->id }}
+                <textarea name="text" cols="30" rows="2" >{{ $post->post}}</textarea>
+
                 <div class="line-right">
                     <!-- モーダルを閉じるボタン(関数名と一致させないとモーダルが閉じません) -->
-                    <button type="button" class="left-button" onclick="editModal({{ $post->id }})">キャンセル</button>
+                    <button type="button" class="left-button" onclick="editModal({{ $post->post }})">キャンセル</button>
                      <!-- 送信ボタン -->
-                    <button type="submit" class="right-button" onclick="editModal({{ $post->id }})">保存</button>
+                    <button type="submit" class="right-button" onclick="editModal({{ $post->post }})">保存</button>
                 </div>
             </form>
         </div>

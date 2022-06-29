@@ -22,7 +22,7 @@
   <input name="bio" value="{{$user->bio}}" />
 
    <p>icon image</p>
-  <img src="{{ asset('storage/app/public/images/'IMG_6400.jpg }}">
+  <img src="{{ asset('images/icon1.png') }}">
   <input  type="file"  name="images" onchange="previewImage(this);">
 <p>
   <button>更新</button>
