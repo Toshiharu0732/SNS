@@ -34,21 +34,21 @@
               <td class="post-text">
                 <div>{{ $post->post}}</div>
 
-    <!-- 編集（モーダル） -->
- <div class="edit-modal editModal-{{ $post->id }}">
-        <div class="modal-content">
-            <h2>投稿編集</h2>
-            <form method="POST" action="{{ url('/top') }}/{{ $post->post}}">
-                @csrf
-                <textarea name="text" cols="30" rows="2" >{{ $post->post}}</textarea>
+  <div class="content">
+        <!-- 投稿の編集ボタン -->
+        <a class="js-modal-open"  post="{{ $post->post }}" post_id="{{ $post->id }}">編集</a>
+    </div>
 
-                <div class="line-right">
-                    <!-- モーダルを閉じるボタン(関数名と一致させないとモーダルが閉じません) -->
-                    <button type="button" class="left-button" onclick="editModal({{ $post->post }})">キャンセル</button>
-                     <!-- 送信ボタン -->
-                    <button type="submit" class="right-button" onclick="editModal({{ $post->post }})">保存</button>
-                </div>
-            </form>
+<!-- 編集（モーダル） -->
+     <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+           <form action="/top" method="POST">
+                <textarea name="text" class="modal_post">{{ $post->post}}</textarea>
+                <input type="hidden" name="id" class="modal_id" value="{{ $post->id }}">
+                <input type="submit" value="更新">
+           </form>
+           <a class="js-modal-close" href="">閉じる</a>
         </div>
     </div>
 

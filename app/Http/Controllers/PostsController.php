@@ -52,19 +52,17 @@ return back();
 
 }
 
-
-     public function postsUpdate(Request $request)
+//投稿編集の処理
+     public function update(Request $request)
     {
-       $posts = new Post;
-       $posts->post = $request->post;
-       $posts->user_id = Auth::id();
+      $form =  $request->input('text');
+      $id = $request->input('id');
+      Post::where('id',$id)->update('posts',$form);
 
-        $posts->update();
-dd($posts);
         return redirect('/top');//保存後はリダイレクトさせたいページを指定したりする
     }
 
-
+//投稿削除の処理
   public function delete($id)
     {
         \DB::table('posts')

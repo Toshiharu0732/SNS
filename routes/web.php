@@ -57,8 +57,9 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 // 投稿画面の表示
 Route::get('/top', 'PostsController@index');
-Route::post('/top/{id}','PostsController@postsUpdate');
 // 投稿処理
 Route::post('posts', 'PostsController@store');
+// 更新処理
+Route::post('/top','PostsController@update');
 // 投稿削除処理
 Route::get('/top/{id}/delete', 'PostsController@delete');
