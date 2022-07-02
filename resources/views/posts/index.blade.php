@@ -43,11 +43,11 @@
      <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-           <form action="/top" method="POST">
-                <textarea name="text" class="modal_post">{{ $post->post}}</textarea>
+           <form action="/update" method="POST">
+            @csrf
+                <textarea name="text" class="modal_post">{{ $post->post }}</textarea>
                 <input type="hidden" name="id" class="modal_id" value="{{ $post->id }}">
                 <input type="submit" value="更新">
-                 {{ scrf_fiels() }}
            </form>
            <a class="js-modal-close" href="">閉じる</a>
         </div>

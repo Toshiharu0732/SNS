@@ -60,6 +60,6 @@ Route::get('/top', 'PostsController@index');
 // 投稿処理
 Route::post('posts', 'PostsController@store');
 // 更新処理
-Route::post('/top','PostsController@update');
+Route::post('/update','PostsController@update');
 // 投稿削除処理
 Route::get('/top/{id}/delete', 'PostsController@delete');

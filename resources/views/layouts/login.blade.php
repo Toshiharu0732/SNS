@@ -21,18 +21,23 @@
 </head>
 <body>
     <header>
-        <div id = "head">
-        <h1><a href="{{ url('top')  }}"><img src="images/atlas.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>{{ Auth::user()->username }}さん<img src="images/icon1.png"></p>
-                <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
-            </div>
+        <div id= "head">
+            <h1><a href="{{ url('top')  }}"><img class="top" src="images/atlas.png"></a></h1>
+                    <div class="accordion">
+                        <div class="accordion-container">
+                         <div class="accordion-item">
+                                <h3>{{ Auth::user()->username }}さん
+                                </h3>
+                                <h3 class="accordion-title js-accordion-title"></h3>
+                                <ul class="accordion-content">
+                                 <li class="accordion-home"><a class="link-grey" href="/top">HOME</a></li>
+                                 <li class="accordion-profile"><a class="link-white" href="/profile">プロフィール編集</a></li>
+                                 <li class="accordion-logout"><a class="link-grey" href="/logout">ログアウト</a></li>
+                                 </ul>
+                                  <img src="images/icon1.png" >
+                            </div>
+                      </div>
+                   </div>
         </div>
     </header>
     <div id="row">
@@ -53,12 +58,12 @@
                 </div>
                 <p class="btn"><a href="">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
         </div>
     </div>
     <footer>
     </footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/accordion.js"></script>
 </body>
 </html>

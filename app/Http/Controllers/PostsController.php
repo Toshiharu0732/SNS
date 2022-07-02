@@ -55,9 +55,9 @@ return back();
 //投稿編集の処理
      public function update(Request $request)
     {
-      $form =  $request->input('text');
+      $form = $request->input('text');
       $id = $request->input('id');
-      Post::where('id',$id)->update('posts',$form);
+      Post::where('id',$id)->update(['post' => $form]);
 
         return redirect('/top');//保存後はリダイレクトさせたいページを指定したりする
     }
