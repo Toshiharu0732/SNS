@@ -63,3 +63,12 @@ Route::post('posts', 'PostsController@store');
 Route::post('/update','PostsController@update');
 // 投稿削除処理
 Route::get('/top/{id}/delete', 'PostsController@delete');
+
+Route::get('/follow-list', 'FollowsController@followList');
+
+Route::get('/follower-list', 'FollowsController@followerList');
+
+
+    // フォロー/フォロー解除を追加
+    Route::post('users/{user}/follow', 'UsersController@follow')->name('follow');
+    Route::delete('users/{user}/unfollow', 'UsersController@unfollow')->name('unfollow');
