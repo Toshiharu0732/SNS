@@ -163,3 +163,8 @@ header {
 .link-white {
     color: #fff;
 }
+
+
+.post-text {
+    display: block;
+}

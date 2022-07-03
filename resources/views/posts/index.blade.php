@@ -32,7 +32,10 @@
             <tr>
               <!-- 投稿詳細 -->
               <td class="post-text">
+                <img src="images/icon1.png" >
+              <h3>{{ Auth::user()->username }}</h3>
                 <div>{{ $post->post}}</div>
+                <div>{{ $post->created_at}}</div>
 
   <div class="content">
         <!-- 投稿の編集ボタン -->
