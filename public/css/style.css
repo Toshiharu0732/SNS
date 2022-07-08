@@ -163,3 +163,33 @@ header {
 .link-white {
     color: #fff;
 }
+
+
+
+.follow {
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100px;
+    padding: 10px 15px;
+    color: #FFF;
+    font-weight: 400;
+    background-color: #53acff;
+}
+
+.unfollow {
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100px;
+    padding: 10px 15px;
+    color: #FFF;
+    font-weight: 400;
+    background-color: #ed3833;
+}

@@ -14,7 +14,15 @@
   <table class="table">
   @foreach($users as $user)
   <tr>
-    <td>{{$user->username}}</td>
+    <td>{{$user->username}}
+      @if ($user->id != Auth::user()->id)
+      @if (Auth::user()->isFollowing($user->id))
+      <a href="/search/{{$user->id}}/unfollow" class="unfollow">フォロー解除</a>
+      @else
+      <a href="/search/{{$user->id}}/follow" class="follow">フォローする</a>
+      @endif
+      @endif
+    </td>
   </tr>
 @endforeach
 </table>

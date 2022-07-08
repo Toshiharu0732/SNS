@@ -18,5 +18,4 @@ public function getEditTweet(Int $user_id, Int $post_id) {
 }
 
 
-
 }

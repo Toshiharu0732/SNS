@@ -33,7 +33,7 @@
               <!-- 投稿詳細 -->
               <td class="post-text">
                 <img src="images/icon1.png" >
-              <h3>{{ Auth::user()->username }}</h3>
+              <h3>{{ $post->username }}</h3>
                 <div>{{ $post->post}}</div>
                 <div>{{ $post->created_at}}</div>
 
