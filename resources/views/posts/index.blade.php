@@ -32,8 +32,8 @@
             <tr>
               <!-- 投稿詳細 -->
               <td class="post-text">
-                <img src="images/icon1.png" >
-              <h3>{{ $post->username }}</h3>
+                <img src="{{ asset('storage/images/'. $post->user->images) }}" >
+               <h3>{{ $post->user->username }}</h3>
                 <div>{{ $post->post}}</div>
                 <div>{{ $post->created_at}}</div>
 

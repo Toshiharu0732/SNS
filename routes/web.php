@@ -42,6 +42,7 @@ Route::get('/top','PostsController@index');
 Route::get('/profile','UsersController@profile');
 //プロフィール更新
 Route::post('/profile','UsersController@update');
+Route::post('/profile','UsersController@store');
 
 //検索のページ
 Route::get('/search','UsersController@search');
@@ -61,6 +62,7 @@ Route::get('/top', 'PostsController@index');
 Route::post('posts', 'PostsController@store');
 // 更新処理
 Route::post('/update','PostsController@update');
+
 // 投稿削除処理
 Route::get('/top/{id}/delete', 'PostsController@delete');
 

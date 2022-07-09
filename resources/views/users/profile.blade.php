@@ -7,7 +7,7 @@
 @endforeach
 
 
-<form method="post" action="/profile">
+<form method="post" action="/profile" enctype='multipart/form-data'>
   @csrf
  <h1>プロフィール編集</h1>
    <p>user name</p>
@@ -22,7 +22,7 @@
   <input name="bio" value="{{$user->bio}}" />
 
    <p>icon image</p>
-  <img src="{{ asset('images/icon1.png') }}">
+  <img src="{{ asset('storage/images/'. Auth::user()->images) }}">
   <input  type="file"  name="images" onchange="previewImage(this);">
 <p>
   <button>更新</button>

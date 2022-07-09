@@ -18,7 +18,7 @@ public function index(){
 $posts= Post::get();
 // ユーザー情報を取得
   $user = Auth::user();
-      $id = Auth::id();
+    $id = Auth::id();
 
 return view('posts.index',['posts'=>$posts],['user'=>$user]);
 

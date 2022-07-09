@@ -34,7 +34,7 @@
                                  <li class="accordion-profile"><a class="link-white" href="/profile">プロフィール編集</a></li>
                                  <li class="accordion-logout"><a class="link-grey" href="/logout">ログアウト</a></li>
                                  </ul>
-                                  <img src="images/icon1.png" >
+                                  <img src="{{ asset('storage/images/'. Auth::user()->images) }}" >
                             </div>
                       </div>
                    </div>
