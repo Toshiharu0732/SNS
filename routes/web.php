@@ -36,7 +36,6 @@ Route::post('/added', 'Auth\RegisterController@added');
 
 Route::group(['middleware' => 'auth'], function() {
 
-Route::get('/top','PostsController@index');
 
 //プロフィールのページ
 Route::get('/profile','UsersController@profile');
@@ -73,3 +72,6 @@ Route::get('/follower-list', 'FollowsController@followerList');
 
 Route::get('/search/{id}/follow', 'FollowsController@follow');
 Route::get('/search/{id}/unfollow', 'FollowsController@unfollow');
+
+
+Route::get('/users/{id}/', 'FollowsController@profile');

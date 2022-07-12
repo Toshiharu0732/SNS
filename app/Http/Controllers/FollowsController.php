@@ -16,17 +16,27 @@ class FollowsController extends Controller
 {
     //
     public function followList(){
-       $posts = Post::get();
+       // フォローしているユーザーのidを取得
+  $following_id = Auth::user()->follows()->pluck('followed_id');
+     // フォローしているユーザーのidを元に投稿内容を取得
+  $posts = Post::with('user')->whereIn('user_id',$following_id)->get();
 
-        return view('follows.followList',['posts' => $posts ]);
+   $users = Auth::user()->follows()->pluck('images');
+
+        return view('follows.followList',['posts' => $posts,'users' => $users ]);
 
     }
 
     public function followerList(){
 
-        $posts = Post::get();
+            // フォローされているユーザーのidを取得
+  $followed_id = Auth::user()->followUsers()->pluck('following_id');
+     // フォローされているユーザーのidを元に投稿内容を取得
+  $posts = Post::with('user')->whereIn('user_id',$followed_id)->get();
 
-        return view('follows.followList',['posts' => $posts ]);
+  $users = Auth::user()->followUsers()->pluck('images');
+
+        return view('follows.followList',['posts' => $posts,'users' => $users ]);
 
     }
 
@@ -52,6 +62,22 @@ class FollowsController extends Controller
         Follow::where('following_id', $follow)->where('followed_id',$id)->delete();
 
          return back();
+    }
+
+
+
+     // 7/13ここから
+
+     public function profile(){
+
+               // ユーザーのidを取得
+  $user_id = Auth::user()->pluck('id');
+     // ユーザーのidを元に投稿内容を取得
+  $posts = Post::with('user')->whereIn('user_id',$user_id)->get();
+
+
+
+        return view('users.usersProfile',['posts' => $posts ]);
     }
 
 }

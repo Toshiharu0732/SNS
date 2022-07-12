@@ -14,14 +14,12 @@ class PostsController extends Controller
     //
 public function index(){
 
-// 全ての投稿を取得
-$posts= Post::get();
-// ユーザー情報を取得
-  $user = Auth::user();
-    $id = Auth::id();
+  // フォローしているユーザーのidを取得
+ $following_id = Auth::user()->follows()->pluck('followed_id');
+     // フォローしているユーザーのidを元に投稿内容を取得
+  $posts = Post::with('user')->whereIn('user_id',$following_id)->get();
 
-return view('posts.index',['posts'=>$posts],['user'=>$user]);
-
+   return view('posts.index',['posts'=>$posts],);
 
 
 }
@@ -69,6 +67,16 @@ return back();
             ->where('id', $id)
             ->delete();
         return redirect('/top');
+    }
+
+  public function followList(){
+       // フォローしているユーザーのidを取得
+  $following_id = Auth::user()->follows()->pluck('followed_id');
+     // フォローしているユーザーのidを元に投稿内容を取得
+  $posts = Post::with('user')->whereIn('user_id',$following_id)->get();
+
+        return view('indax',['posts' => $posts ]);
+
     }
 
 
