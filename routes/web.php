@@ -74,4 +74,7 @@ Route::get('/search/{id}/follow', 'FollowsController@follow');
 Route::get('/search/{id}/unfollow', 'FollowsController@unfollow');
 
 
-Route::get('/users/{id}/', 'FollowsController@profile');
+Route::get('/users/{id}/', 'UsersController@userProfile');
+
+Route::get('/users/{id}/follow', 'UsersController@follow');
+Route::get('/users/{id}/unfollow', 'UsersController@unfollow');

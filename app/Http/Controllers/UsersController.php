@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Request as SearchRequest;
 use App\User;
+use App\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -100,6 +101,44 @@ class UsersController extends Controller
   $users = $request->orderBy('username','desc')->paginate(20);
     return view('users.search')->with('users', $users);
     }
+
+
+     public function userProfile($id){
+           //上の＄idはリストから送られて来るid
+               // ユーザーのidを取得
+    $user=User::where('id',$id)->first();
+
+   $posts = Post::with('user')->whereIn('user_id',$user)->get();
+                                                        // ↑first();にすると一番最初の値のみとるのでループがされなくなる。
+   // ちなみに $posts = Post::where('user_id',$id)->get(); でも可
+        return view('users.usersProfile',['posts' => $posts ]);
+
+    }
+
+       public function follow($id) {
+
+        $follow = Auth::id();
+        Follow::create([
+         'following_id' => $follow,
+         'followed_id' => $id
+        ]);
+
+         $followCount = count(Follow::where('followed_id', Auth::user()->id)->get());
+
+
+        return back();
+
+    }
+
+     public function unfollow($id) {
+
+        $follow = Auth::id();
+        Follow::where('following_id', $follow)->where('followed_id',$id)->delete();
+
+         return back();
+    }
+
+
 
 
 

@@ -22,7 +22,7 @@
 <body>
     <header>
         <div id= "head">
-            <h1><a href="{{ url('top')  }}"><img class="top" src="images/atlas.png"></a></h1>
+            <h1><a href="{{ url('top')  }}"><img class="top" src="{{ asset( 'images/atlas.png') }}"></a></h1>
                     <div class="accordion">
                         <div class="accordion-container">
                          <div class="accordion-item">

@@ -66,18 +66,4 @@ class FollowsController extends Controller
 
 
 
-     // 7/13ここから
-
-     public function profile(){
-
-               // ユーザーのidを取得
-  $user_id = Auth::user()->pluck('id');
-     // ユーザーのidを元に投稿内容を取得
-  $posts = Post::with('user')->whereIn('user_id',$user_id)->get();
-
-
-
-        return view('users.usersProfile',['posts' => $posts ]);
-    }
-
 }
