@@ -109,11 +109,11 @@ class UsersController extends Controller
     $user=User::where('id',$id)->first();
 
    $posts = Post::with('user')->whereIn('user_id',$user)->get();
-                                                        // ↑first();にすると一番最初の値のみとるのでループがされなくなる。
+                                                  // ↑first();にすると一番最初の値のみとるのでループがされなくなる。
    // ちなみに $posts = Post::where('user_id',$id)->get(); でも可
-        return view('users.usersProfile',['posts' => $posts ]);
-
+        return view('users.usersProfile',['posts' => $posts ],['users'=> $user]);
     }
+
 
        public function follow($id) {
 
@@ -122,10 +122,6 @@ class UsersController extends Controller
          'following_id' => $follow,
          'followed_id' => $id
         ]);
-
-         $followCount = count(Follow::where('followed_id', Auth::user()->id)->get());
-
-
         return back();
 
     }

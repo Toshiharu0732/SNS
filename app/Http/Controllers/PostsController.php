@@ -11,13 +11,13 @@ use Validator;
 class PostsController extends Controller
 {
 
-    //
 public function index(){
 
-  // フォローしているユーザーのidを取得
- $following_id = Auth::user()->follows()->pluck('followed_id');
-     // フォローしているユーザーのidを元に投稿内容を取得
-  $posts = Post::with('user')->whereIn('user_id',$following_id)->get();
+  // フォローしているユーザーを取得
+  $following_id = Auth::user()->follows()->pluck('followed_id');
+
+                // ログインユーザーのidから投稿を取得
+  $posts = Post::where('user_id',Auth::id())->orWhere('user_id',$following_id)->get();
 
    return view('posts.index',['posts'=>$posts],);
 
