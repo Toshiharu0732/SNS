@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('/profile','UsersController@profile');
 //プロフィール更新
 Route::post('/profile','UsersController@update');
-Route::post('/profile','UsersController@store');
+
 
 //検索のページ
 Route::get('/search','UsersController@search');

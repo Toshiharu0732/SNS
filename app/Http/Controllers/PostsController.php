@@ -11,15 +11,18 @@ use Validator;
 class PostsController extends Controller
 {
 
-public function index(){
+public function index(Post $post){
 
-  // フォローしているユーザーを取得
-  $following_id = Auth::user()->follows()->pluck('followed_id');
+  $user = auth()->user();
+  // フォローしているユーザーのidから取得
+  $following_id = Auth::user()->follows()->pluck('followed_id')->toArray();
 
-                // ログインユーザーのidから投稿を取得
-  $posts = Post::where('user_id',Auth::id())->orWhere('user_id',$following_id)->get();
 
-   return view('posts.index',['posts'=>$posts],);
+$timelines = $post->getTimelines($user->id, $following_id);
+
+
+
+   return view('posts.index',['posts'=>$timelines]);
 
 
 }
