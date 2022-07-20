@@ -1,31 +1,28 @@
 @extends('layouts.login')
 
 @section('content')
- <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+    <div>
+        <div >
+            <div>
+                <div class="list-images">
                   @foreach ($users as $post)
-                   <div class="card-haeder p-3 w-100 d-flex">
                             <img src="{{ asset('storage/images/'. $post) }}" class="rounded-circle" width="50" height="50">
-                    </div>
                   @endforeach
+                </div>
                 @foreach ($posts as $post)
-                    <div class="card">
-                        <div class="card-haeder p-3 w-100 d-flex">
+                    <div class="post-block">
+
                             <a href="{{ url('users/' .$post->user->id)
                                  }}" class="text-secondary"> <img src="{{ asset('storage/images/'. $post->user->images) }}" class="rounded-circle" width="50" height="50"></a>
-                            <div class="ml-2 d-flex flex-column">
-                                <p>{{ $post->user->username }}</p>
-                                <textarea name="text" class="modal_post">{{ $post->post }}</textarea>
-                                 <div>{{ $post->created_at}}</div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-        <div class="my-4 d-flex justify-content-center">
-        </div>
-    </div>
+                                  <div class="post-content">
 
+                                <div class="post-name">{{ $post->user->username }}</div>
+                                {{ $post->post }}</div>
+                                 <div>{{ $post->created_at}}</div>
+                                </div>
+                    </?div>
+                @endforeach
+         </div>
+    </div>
+ </div>
 @endsection

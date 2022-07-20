@@ -7,12 +7,18 @@ body {}
 /* header */
 header {
     background: #186AC9;
+    display: flex;
 }
 
 /* main content */
 #row {
     display: flex;
     flex-flow: row wrap;
+
+}
+
+#confirm {
+    flex: 0 0 80%;
 }
 
 #container {
@@ -20,6 +26,7 @@ header {
 }
 
 #side-bar {
+    display: flex;
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 
@@ -27,7 +34,7 @@ header {
 
 .top {
     width: 150px;
-    height: 50px;
+    height: 60px;
 }
 
 
@@ -78,7 +85,9 @@ header {
 }
 
 
-.accordion-item {}
+.accordion-item {
+    display: flexbox;
+}
 
 .accordion-title {
     color: #fff;
@@ -137,23 +146,23 @@ header {
 .accordion-home {
     background-color: #fff;
     color: #727272;
-    text-align: center;
     font-size: 25px;
+    text-align: center;
 
 }
 
 .accordion-profile {
     background-color: #00297e;
     color: #fff;
-    text-align: center;
     font-size: 25px;
+    text-align: center;
 }
 
 .accordion-logout {
     background-color: #fff;
     color: #727272;
-    text-align: center;
     font-size: 25px;
+    text-align: center;
 }
 
 .link-grey {
@@ -192,4 +201,72 @@ header {
     color: #FFF;
     font-weight: 400;
     background-color: #ed3833;
+}
+
+
+.post-block {
+    list-style: none;
+    border-bottom: 1px solid #000;
+    display: flex;
+    padding-left: 100px;
+    padding-top: 15px;
+
+}
+
+.post-content {
+    width: 100%;
+    padding: 15px;
+    margin-right: 0px;
+}
+
+.post-content>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-name {
+    margin-bottom: 10px;
+}
+
+.modal_post {
+    width: 800px;
+    height: 250px;
+    margin: auto;
+}
+
+.post-aria {
+    display: flex;
+    margin-top: 50px;
+    padding-left: 80px;
+    border-bottom: 8px solid #e0e0e0;
+}
+
+.post-content-aria {
+    width: 800px;
+    height: 50px;
+    margin: 0px 30px 30px 10px;
+    font-size: 15px;
+    border-style: none;
+
+}
+
+.search-list.search-images {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.list-images {
+    text-align: center;
+    border-bottom: 8px solid #e0e0e0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.user-aria {
+    border-bottom: 8px solid #e0e0e0;
+    list-style: none;
+    display: flex;
+    padding-left: 100px;
+    padding-top: 15px;
 }

@@ -23,7 +23,15 @@
     <header>
         <div id= "head">
             <h1><a href="{{ url('top')  }}"><img class="top" src="{{ asset( 'images/atlas.png') }}"></a></h1>
-                    <div class="accordion">
+        </div>
+    </header>
+    <div id="row">
+         <div id="confirm">
+             <div id="container">
+               @yield('content')
+            </div >
+              <div id="side-bar">
+                <div class="accordion">
                         <div class="accordion-container">
                          <div class="accordion-item">
                                 <h3>{{ Auth::user()->username }}さん
@@ -35,29 +43,24 @@
                                  <li class="accordion-logout"><a class="link-grey" href="/logout">ログアウト</a></li>
                                  </ul>
                                   <img src="{{ asset('storage/images/'. Auth::user()->images) }}" >
-                            </div>
+                         </div>
                       </div>
+                            <div>
+                            <p>{{ Auth::user()->username }}さんの</p>
+                             <p>フォロー数</p>
+                            <p>{{Auth::user()->follows->count()}}名</p>
+                            <p class="btn"><a href="/follow-list">フォローリスト</a></p>
+                            <p>フォロワー数</p>
+                            <p>{{Auth::user()->followUsers->count()}}名</p>
+                            <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
+                            <!-- 検索 -->
+                            <form method="get" action="/search">
+                             <div>
+                             <button type="submit">ユーザー検索</button>
+                             </div>
+                            </form>
+                        </div>
                    </div>
-        </div>
-    </header>
-    <div id="row">
-        <div id="container">
-            @yield('content')
-        </div >
-        <div id="side-bar">
-            <div id="confirm">
-                <p>{{ Auth::user()->username }}さんの</p>
-                <div>
-                <p>フォロー数</p>
-                <p>{{Auth::user()->follows->count()}}名</p>
-                </div>
-                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
-                <div>
-                <p>フォロワー数</p>
-                <p>{{Auth::user()->followUsers->count()}}名</p>
-                </div>
-                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
-            </div>
         </div>
     </div>
     <footer>

@@ -63,7 +63,7 @@ class UsersController extends Controller
  public function search(Request $request) {
       //ユーザー検索
       $users = SearchRequest::get('name');
-
+      $request->session()->put('name',$users);
       $request = User::query();
 
        if(!empty($users))
@@ -72,6 +72,7 @@ class UsersController extends Controller
   }
   $users = $request->orderBy('username','desc')->paginate(20);
     return view('users.search')->with('users', $users);
+
     }
 
 

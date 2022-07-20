@@ -15,7 +15,7 @@
                                 <img src="{{ asset('storage/images/'. $post->user->images) }}" class="rounded-circle" width="50" height="50"></a>
                             <div class="ml-2 d-flex flex-column">
                                 <p>{{ $post->user->username }}</p>
-                                <textarea name="text" class="modal_post">{{ $post->post }}</textarea>
+                                <textarea name="text" class="">{{ $post->post }}</textarea>
                                  <div>{{ $post->created_at}}</div>
                             </div>
                         </div>
