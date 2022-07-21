@@ -23,8 +23,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="my-4 d-flex justify-content-center">
-        </div>
     </div>
+ </div>
 
 @endsection

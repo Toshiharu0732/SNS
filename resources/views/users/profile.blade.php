@@ -9,25 +9,51 @@
 
 <form method="post" action="/profile" enctype='multipart/form-data'>
   @csrf
- <h1>プロフィール編集</h1>
-   <p>user name</p>
-  <input name="username" value="{{$user->username}}" />
-   <p>mail adress</p>
-    <input name="mail" value="{{$user->mail}}" />
-   <p>password</p>
-   <input type="password" name="password"  />
-  <p>password comfirm</p>
-   <input  type="password" name="password_confirmation"/>
-   <p>bio</p>
-  <input name="bio" value="{{$user->bio}}" />
 
+  <div class="profile-top">
+      <img src="{{ asset('storage/images/'. Auth::user()->images) }}" width="50" height="50" class="profile-image">
+   <p>user name</p>
+   <p class="profile-username">
+  <input name="username" value="{{$user->username}}" class="font-s"/>
+  </p>
+  </div>
+  <div class="profile-list">
+   <p>mail adress</p>
+     <p class="profile-adress">
+    <input name="mail" value="{{$user->mail}}" class="font-s"/>
+    </p>
+    </div>
+      <div class="profile-list">
+   <p>password</p>
+     <p class="profile-password">
+   <input type="password" name="password"  class="font-s"/>
+   </p>
+   </div>
+      <div class="profile-list">
+  <p>password comfirm</p>
+    <p class="profile-password-comfirm">
+   <input  type="password" name="password_confirmation" class="font-s"/>
+   </p>
+   </div>
+   <div class="profile-list">
+   <p>bio</p>
+     <p class="profile-bio">
+  <input name="bio" value="{{$user->bio}}" class="font-s" />
+  </p>
+  </div>
+ <div class="profile-list">
    <p>icon image</p>
-  <img src="{{ asset('storage/images/'. Auth::user()->images) }}">
-  <input  type="file"  name="images" onchange="previewImage(this);">
+     <p class="profile-username">
+  <input  type="file"  name="images" onchange="previewImage(this);" class="profile-file">
+</p>
+
+  </div>
 <p>
-  <button>更新</button>
+  <button type="submit"  class="button-update">更新</button>
 </p>
 </form>
+</div>
+
 
 
 

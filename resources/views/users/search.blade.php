@@ -1,6 +1,7 @@
 @extends('layouts.login')
 
 @section('content')
+<div class="post-aria">
 <form action="{{ url('/search')}}" method="post">
   {{ csrf_field()}}
   {{method_field('get')}}
@@ -10,7 +11,8 @@
        <p>検索ワード：{{ session('name') }}</p>
       </div>
  </form>
- <div style="search-list">
+ </div>
+ <div class="search-list">
   <table class="">
   @foreach($users as $user)
   <tr>
@@ -28,6 +30,8 @@
     @endforeach
       </td>
   </tr>
+  </div>
 </table>
+</div>
 </div>
 @endsection

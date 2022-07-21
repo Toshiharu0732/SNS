@@ -270,3 +270,150 @@ header {
     padding-left: 100px;
     padding-top: 15px;
 }
+
+.side-list {
+    border-bottom: 1px solid #e0e0e0;
+    padding-top: 15px;
+    padding-bottom: 25px;
+
+}
+
+.list-view {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    display: flex;
+}
+
+.list-count-follow {
+    margin-left: 60px;
+}
+
+.list-count-follower {
+    margin-left: 44px;
+}
+
+.list-btn {
+    font-size: 10px;
+    margin-left: 100px;
+    margin-top: 20px;
+    display: inline-block;
+    background: #0756cf;
+    /* 背景色 */
+    color: #e0e0e0;
+    /* 文字色 */
+    padding: 10px 30px;
+    /* 上下の余白、左右の余白 */
+    text-decoration: none;
+    /* デフォルトで入るリンクの下線を消す */
+    border-radius: 5px;
+    /* 角を丸くする */
+    border: 1px solid #333
+}
+
+.list-btn:hover {
+    color: #e0e0e0;
+    /* 背景色     */
+    background: #00297e;
+    /* 文字色     */
+}
+
+.button {
+    font-size: 13px;
+    margin: 30px 10px 10px 60px;
+    display: inline-block;
+    background: #0756cf;
+    /* 背景色 */
+    color: #FFF;
+    /* 文字色 */
+    padding: 10px 30px;
+    /* 上下の余白、左右の余白 */
+    text-decoration: none;
+    /* デフォルトで入るリンクの下線を消す */
+    border-radius: 5px;
+    /* 枠の指定 */
+}
+
+.button:hover {
+    color: #FFF;
+    /* 背景色     */
+    background: #00297e;
+    /* 文字色     */
+}
+
+.button-update {
+    font-size: 13px;
+    margin: 30px 10px 10px 580px;
+    display: inline-block;
+    background: #ed3b50;
+    /* 背景色 */
+    color: #FFF;
+    /* 文字色 */
+    padding: 8px 60px;
+    /* 上下の余白、左右の余白 */
+    text-decoration: none;
+    /* デフォルトで入るリンクの下線を消す */
+    border-radius: 5px;
+    /* 枠の指定 */
+}
+
+.button-update:hover {
+    color: #FFF;
+    /* 背景色     */
+    background: #84020d;
+    /* 文字色     */
+}
+
+
+.profile-top {
+    display: flex;
+    margin: 50px 10px -15px 310px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.profile-list {
+    display: flex;
+    margin: 0px 10px 5px 400px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.profile-image {
+    margin-right: 40px;
+}
+
+.profile-username {
+    padding-left: 161px;
+}
+
+.profile-adress {
+    padding-left: 153px;
+}
+
+.profile-password {
+    padding-left: 170px;
+}
+
+.profile-password-comfirm {
+    padding-left: 80px;
+}
+
+.profile-bio {
+    padding-left: 235px;
+}
+
+.profile-file {
+    width: 200px;
+    height: 50px;
+}
+
+.font-s {
+    font-size: 20px;
+}
+
+.search-list {
+    display: flex;
+    margin: 0px 10px 5px 400px;
+    padding-top: 20px;
+    font-size: 20px;
+}

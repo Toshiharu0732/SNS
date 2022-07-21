@@ -46,21 +46,27 @@
                          </div>
                       </div>
                             <div>
+                                <div class="side-list">
                             <p>{{ Auth::user()->username }}さんの</p>
+                              <div class="list-view">
                              <p>フォロー数</p>
-                            <p>{{Auth::user()->follows->count()}}名</p>
-                            <p class="btn"><a href="/follow-list">フォローリスト</a></p>
+                            <p class="list-count-follow">{{Auth::user()->follows->count()}}名</p>
+                                   </div>
+                            <p class="list-btn"><a href="/follow-list" class="link-white">フォローリスト</a></p>
+                               <div class="list-view">
                             <p>フォロワー数</p>
-                            <p>{{Auth::user()->followUsers->count()}}名</p>
-                            <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
+                            <p class="list-count-follower">{{Auth::user()->followUsers->count()}}名</p>
+                             </div>
+                            <p class="list-btn"><a href="/follower-list" class="link-white">フォロワーリスト</a></p>
+                             </div>
                             <!-- 検索 -->
                             <form method="get" action="/search">
                              <div>
-                             <button type="submit">ユーザー検索</button>
+                             <button type="submit"  class="button">ユーザー検索</button>
                              </div>
                             </form>
-                        </div>
-                   </div>
+                    </div>
+              </div>
         </div>
     </div>
     <footer>
