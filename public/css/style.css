@@ -14,7 +14,6 @@ header {
 #row {
     display: flex;
     flex-flow: row wrap;
-
 }
 
 #confirm {
@@ -29,7 +28,7 @@ header {
     display: flex;
     flex: 0 0 19%;
     border-left: 1px solid #727272;
-
+    min-height: 100vh;
 }
 
 .top {
@@ -40,6 +39,11 @@ header {
 
 #head {
     display: flex;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
 }
 
 
@@ -57,7 +61,7 @@ header {
 }
 
 .modal__bg {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.1);
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -73,20 +77,30 @@ header {
     width: 60%;
 }
 
+.modal_post {
+    width: 800px;
+    height: 150px;
+    margin: auto;
+}
+
 /*アコーディオンニュー */
 
 .accordion {
     margin-left: auto;
     margin-right: 10px;
     margin-top: 30px;
-    max-width: 250px;
+    max-width: 200px;
     position: relative;
     width: 100%;
 }
 
 
 .accordion-item {
-    display: flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .accordion-title {
@@ -206,7 +220,7 @@ header {
 
 .post-block {
     list-style: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #727272;
     display: flex;
     padding-left: 100px;
     padding-top: 15px;
@@ -228,11 +242,6 @@ header {
     margin-bottom: 10px;
 }
 
-.modal_post {
-    width: 800px;
-    height: 250px;
-    margin: auto;
-}
 
 .post-aria {
     display: flex;
@@ -263,6 +272,11 @@ header {
     padding-bottom: 60px;
 }
 
+.auth-name {
+    color: #fff;
+    padding-top: 18px;
+}
+
 .user-aria {
     border-bottom: 8px solid #e0e0e0;
     list-style: none;
@@ -275,7 +289,7 @@ header {
     border-bottom: 1px solid #e0e0e0;
     padding-top: 15px;
     padding-bottom: 25px;
-
+    padding-left: 35px;
 }
 
 .list-view {

@@ -22,7 +22,22 @@
 <body>
     <header>
         <div id= "head">
-            <h1><a href="{{ url('top')  }}"><img class="top" src="{{ asset( 'images/atlas.png') }}"></a></h1>
+            <h1><a href="{{ url('top')  }}"><img class="top" src="{{ asset( 'images/atlas.png') }}" ></a></h1>
+            <div class="accordion">
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <h3 class="auth-name">{{ Auth::user()->username }}さん
+                        </h3>
+                        <h3 class="accordion-title js-accordion-title"></h3>
+                        <ul class="accordion-content">
+                            <li class="accordion-home"><a class="link-grey" href="/top">HOME</a></li>
+                            <li class="accordion-profile"><a class="link-white" href="/profile">プロフィール編集</a></li>
+                            <li class="accordion-logout"><a class="link-grey" href="/logout">ログアウト</a></li>
+                        </ul>
+                        <img src="{{ asset('storage/images/'. Auth::user()->images) }}" width="50" height="50" >
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     <div id="row">
@@ -31,20 +46,6 @@
                @yield('content')
             </div >
               <div id="side-bar">
-                <div class="accordion">
-                        <div class="accordion-container">
-                         <div class="accordion-item">
-                                <h3>{{ Auth::user()->username }}さん
-                                </h3>
-                                <h3 class="accordion-title js-accordion-title"></h3>
-                                <ul class="accordion-content">
-                                 <li class="accordion-home"><a class="link-grey" href="/top">HOME</a></li>
-                                 <li class="accordion-profile"><a class="link-white" href="/profile">プロフィール編集</a></li>
-                                 <li class="accordion-logout"><a class="link-grey" href="/logout">ログアウト</a></li>
-                                 </ul>
-                                  <img src="{{ asset('storage/images/'. Auth::user()->images) }}" >
-                         </div>
-                      </div>
                             <div>
                                 <div class="side-list">
                             <p>{{ Auth::user()->username }}さんの</p>

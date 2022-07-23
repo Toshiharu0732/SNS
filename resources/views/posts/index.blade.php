@@ -56,7 +56,7 @@
                     @csrf
                         <textarea name="text" class="modal_post">{{ $post->post }}</textarea>
                         <input type="hidden" name="id" class="modal_id" value="{{ $post->id }}">
-                  <input type="image" img src="{{ asset( 'images/edit.png') }}" width="25" height="25">
+                  <input type="image" img src="{{ asset( 'images/edit.png') }}" width="50" height="50">
                   </form>
                   <a class="js-modal-close" href=""></a>
                    </div>

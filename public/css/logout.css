@@ -32,6 +32,8 @@ input {
     margin-left: 13%;
     display: block;
     font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .com {
@@ -46,4 +48,36 @@ input {
 .login-me {
     font-size: 18px;
     padding-bottom: 20px;
+}
+
+.btn-login {
+    font-size: 13px;
+    margin: 5px 10px 10px 85px;
+    display: inline-block;
+    background: #0756cf;
+    /* 背景色 */
+    color: #FFF;
+    /* 文字色 */
+    padding: 5px 15px;
+    /* 上下の余白、左右の余白 */
+    text-decoration: none;
+    /* デフォルトで入るリンクの下線を消す */
+    border-radius: 5px;
+    /* 枠の指定 */
+}
+
+.btn-register {
+    font-size: 13px;
+    margin: 0px 10px 10px 70px;
+    display: inline-block;
+    background: #f2102b;
+    /* 背景色 */
+    color: #FFF;
+    /* 文字色 */
+    padding: 5px 15px;
+    /* 上下の余白、左右の余白 */
+    text-decoration: none;
+    /* デフォルトで入るリンクの下線を消す */
+    border-radius: 5px;
+    /* 枠の指定 */
 }

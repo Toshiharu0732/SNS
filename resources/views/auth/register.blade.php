@@ -22,7 +22,7 @@
 {{ Form::label('password_confirmation') }}
 {{ Form::password('password_confirmation',['class' => 'input']) }}
 
-{{ Form::submit('REGISTER') }}
+{{ Form::submit('REGISTER',['class' => 'btn-register']) }}
 
 <p><a href="/login" class="com">ログイン画面へ戻る</a></p>
 
