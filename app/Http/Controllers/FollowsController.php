@@ -21,7 +21,7 @@ class FollowsController extends Controller
      // フォローしているユーザーのidを元に投稿内容を取得
   $posts = Post::with('user')->whereIn('user_id',$following_id)->latest()->get();
 
-   $users = Auth::user()->follows()->pluck('images');
+   $users = Auth::user()->follows()->get();
 
         return view('follows.followList',['posts' => $posts,'users' => $users ]);
 
@@ -34,7 +34,7 @@ class FollowsController extends Controller
      // フォローされているユーザーのidを元に投稿内容を取得
   $posts = Post::with('user')->whereIn('user_id',$followed_id)->latest()->get();
 
-  $users = Auth::user()->followUsers()->pluck('images');
+  $users = Auth::user()->followUsers()->get();
 
         return view('follows.followList',['posts' => $posts,'users' => $users ]);
 

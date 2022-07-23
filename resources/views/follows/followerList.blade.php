@@ -5,7 +5,8 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                  @foreach ($users as $post)
-                   <img src="{{ asset('storage/images/'. $post) }}" class="rounded-circle" width="50" height="50">
+                     <a href="{{ url('users/' .$post->id)
+                                 }}" class="text-secondary"> <img src="{{ asset('storage/images/'. $post->images) }}" class="rounded-circle" width="50" height="50"></a>
                  @endforeach
                 @foreach ($posts as $post)
                     <div class="card">

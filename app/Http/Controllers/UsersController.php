@@ -81,6 +81,7 @@ class UsersController extends Controller
                // ユーザーのidを取得
     $user=User::where('id',$id)->first();
 
+
    $posts = Post::with('user')->whereIn('user_id',$user)->get();
     // ↑first();にすると一番最初の値のみとるのでループがされなくなる。
    // ちなみに $posts = Post::where('user_id',$id)->get(); でも可

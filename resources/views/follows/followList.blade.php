@@ -6,7 +6,8 @@
             <div>
                 <div class="list-images">
                   @foreach ($users as $post)
-                            <img src="{{ asset('storage/images/'. $post) }}" class="rounded-circle" width="50" height="50">
+                          <a href="{{ url('users/' .$post->id)
+                                 }}" class="text-secondary"> <img src="{{ asset('storage/images/'. $post->images) }}" class="rounded-circle" width="50" height="50"></a>
                   @endforeach
                 </div>
                 @foreach ($posts as $post)
