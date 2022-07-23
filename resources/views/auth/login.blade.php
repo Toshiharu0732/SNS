@@ -4,9 +4,10 @@
 
 {!! Form::open() !!}
 
-<p>AtlasSNSへようこそ</p>
+<p class="login-me">AtlasSNSへようこそ</p>
 
-{{ Form::label('e-mail') }}
+
+{{ Form::label('mail address') }}
 {{ Form::text('mail',null,['class' => 'input']) }}
 {{ Form::label('password') }}
 {{ Form::password('password',['class' => 'input']) }}
@@ -14,6 +15,8 @@
 
 
 <p><a href="/register" class="com">新規ユーザーの方はこちら</a></p>
+
+
 
 {!! Form::close() !!}
 

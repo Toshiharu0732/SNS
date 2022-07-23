@@ -8,23 +8,23 @@
   <li>{{$error}}</li>
 @endforeach
 
-<h2>新規ユーザー登録</h2>
+<h2 class="login-me">新規ユーザー登録</h2>
 
-{{ Form::label('ユーザー名') }}
+{{ Form::label('user name') }}
 {{ Form::text('username',null,['class' => 'input']) }}
 
-{{ Form::label('メールアドレス') }}
+{{ Form::label('mail adress') }}
 {{ Form::text('mail',null,['class' => 'input']) }}
 
-{{ Form::label('パスワード') }}
+{{ Form::label('password') }}
 {{ Form::password('password',['class' => 'input']) }}
 
-{{ Form::label('パスワード確認') }}
+{{ Form::label('password_confirmation') }}
 {{ Form::password('password_confirmation',['class' => 'input']) }}
 
-{{ Form::submit('登録') }}
+{{ Form::submit('REGISTER') }}
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
+<p><a href="/login" class="com">ログイン画面へ戻る</a></p>
 
 {!! Form::close() !!}
 

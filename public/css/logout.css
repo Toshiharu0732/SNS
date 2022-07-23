@@ -6,34 +6,44 @@ html {
     background-image: linear-gradient(0deg, #d6d65e 0%, #0586ff 60%);
 }
 
+#container {
+    color: #fff;
+    text-align: center;
+    margin: 2em auto;
+    padding: 2.5em;
+    width: 15%;
+    /* 枠線 */
+    border-radius: 10px;
+    /*角の丸み*/
+    background-color: rgba(79, 0, 0, 0.2);
+}
+
 
 body {
     text-align: center;
     margin-top: 10%;
-    font-size: 20px;
+    font-size: 15px;
+    margin-bottom: 10%;
     color: #ffffff;
 }
 
 
-
-div {
-    margin-top: 5%;
-    margin-bottom: 20px;
-}
-
-
 input {
-    margin-left: 45%;
+    margin-left: 13%;
     display: block;
+    font-size: 15px;
 }
 
 .com {
     color: #ffffff;
     font-size: 15px;
-    margin-top: 10px;
 }
 
-submit {
-    margin-left: 45%;
-    display: block;
+.login-top {
+    font-size: 30px;
+}
+
+.login-me {
+    font-size: 18px;
+    padding-bottom: 20px;
 }
