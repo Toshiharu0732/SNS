@@ -44,6 +44,7 @@ header {
     justify-content: space-between;
     width: 100%;
     padding: 10px;
+
 }
 
 
@@ -89,9 +90,10 @@ header {
     margin-left: auto;
     margin-right: 10px;
     margin-top: 30px;
-    max-width: 200px;
+    max-width: 400px;
     position: relative;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 
@@ -101,13 +103,15 @@ header {
     -webkit-justify-content: space-between;
     justify-content: space-between;
     width: 100%;
+    z-index: 30;
+    position: absolute
 }
 
 .accordion-title {
     color: #fff;
     cursor: pointer;
-    font-size: 16px;
-    padding: 10px 20px;
+    font-size: 50px;
+    padding: 0px 30px;
 }
 
 .accordion-content {
@@ -116,17 +120,16 @@ header {
 }
 
 .accordion-content p {
-    font-size: 25px;
+    font-size: 35px;
 
 }
 
 /* タイトルの背景色 */
-.accordion-item:nth-of-type(1) .accordion-title {
-    background-color: #186AC9;
-}
+.accordion-item:nth-of-type(1) .accordion-title {}
 
 /* コンテンツボックスの枠線 */
 .accordion-item:nth-of-type(1) .accordion-content {
+    border-top: 2px solid #00297e;
     border-bottom: 2px solid #00297e;
     border-left: 2px solid #00297e;
     border-right: 2px solid #00297e;
