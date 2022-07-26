@@ -45,6 +45,7 @@
              <div id="container">
                @yield('content')
             </div >
+         </div >
               <div id="side-bar">
                             <div>
                                 <div class="side-list">

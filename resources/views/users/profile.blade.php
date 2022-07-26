@@ -52,7 +52,6 @@
   <button type="submit"  class="button-update">更新</button>
 </p>
 </form>
-</div>
 
 
 

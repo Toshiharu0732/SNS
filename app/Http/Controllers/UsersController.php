@@ -30,8 +30,7 @@ class UsersController extends Controller
       $validator = Validator::make($request->all(), [
             'username' => 'required|max:12|min:2',
             'mail' => 'required|email|max:40|min:5|',
-            'password' => 'required|alpha_num|min:8|max:20|confirmed',
-            'password_confirmation' => 'required',
+            'password' => 'alpha_num|min:8|max:20|confirmed',
             'bio' => 'max:150',
             'images' => 'image',
         ]);
